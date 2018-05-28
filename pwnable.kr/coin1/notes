@@ -1,0 +1,10 @@
+should implement binary search to win the game and get the flag
+
+SOLUTION:
+	connect to another level via ssh
+	create directory in the /tmp
+	upload _pwn.py there
+	run python _pwn.py
+FLAG:
+b1NaRy_S34rch1nG_1s_3asy_p3asy
+

@@ -1,0 +1,22 @@
+looks vulnerable:
+
+if (bet > cash) //If player tries to bet more money than player has
+{
+    printf("\nYou cannot bet more money than you have.");
+    printf("\nEnter Bet: ");
+    scanf("%d", &bet);
+    return bet;
+}
+
+=> ability to bypass check if enter invalid bet twice
+bet is signed => can write big negative number and loose to increase cash
+
+SOLUTION: 
+	Enter Bet: $-10000000
+	
+	Would You Like to Hit or Stay?
+	Please Enter H to Hit or S to Stay.
+	S
+
+FLAG:
+YaY_I_AM_A_MILLIONARE_LOL

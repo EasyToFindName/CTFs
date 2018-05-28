@@ -1,0 +1,23 @@
+find out rand() value in the program;
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+        int r = rand();
+        printf("%d", r);
+        return 0;
+}
+
+
+=> random = 1804289383 = 0x6b8b4567
+
+if( (key ^ random) == 0xdeadbeef ) //win condition
+
+key = random ^ 0xdeadbeef
+
+=> key = 0xb526fb88 = 3039230856
+
+SOLUTION:
+	./random
+	3039230856
+FLAG:
+Mommy, I thought libc random is unpredictable...

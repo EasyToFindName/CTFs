@@ -1,0 +1,12 @@
+STAGE 1
+Payload:
+	argv = list("A"*(100-1))
+	argv[ord('A') - 1] = "$'\x00'"
+	argv[ord('B') - 1] = "$'\x20\x0a\x0d'"
+	' '.join(argv)
+Result:
+./input A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A $'\x00' $'\x20\x0a\x0d' A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A
+
+STAGE 2
+	
+>&0 echo $'\x00\x0a\x00\xff'; >&2 echo $'\x00\x0a\x02\xff' | ./input A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A $'\x00' $'\x20\x0a\x0d' A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A

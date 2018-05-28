@@ -1,0 +1,9 @@
+funmail 1.0
+	username: john galt
+	password: this-password-is-a-secret-to-everyone!
+
+funmail 2.0
+	username: john galt
+	password: more-secure-password
+
+	should set eip in gdb on printFlag func

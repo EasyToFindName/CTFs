@@ -1,0 +1,25 @@
+looks vulnerable:
+
+for(i=0; i<6; i++){
+		for(j=0; j<6; j++){
+			if(lotto[i] == submit[j]){
+				match++;
+			}
+		}
+	}
+
+	// win!
+	if(match == 6){
+
+
+if lotto contains N and submit has K occurences of N
+then match=K<=6;
+
+so actual win chance = ~6/45
+
+SOLUTION:
+while flag is not printed submit:
+	$$$$$$
+
+FLAG:
+sorry mom... I FORGOT to check duplicate numbers... :(

