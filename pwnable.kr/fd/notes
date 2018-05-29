@@ -1,0 +1,15 @@
+in source: 
+	int fd = atoi( argv[1] ) - 0x1234;
+	...
+	if(!strcmp("LETMEWIN\n", buf)) //win condition
+
+need to get stdin(fd=1)
+dec(0x1235) = 4661 
+
+SOLUTION:
+	./fd 4661
+	LETMEWIN
+
+FLAG: 
+mommy! I think I know what a file descriptor is!!
+

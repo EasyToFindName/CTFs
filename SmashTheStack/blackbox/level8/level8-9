@@ -1,0 +1,11 @@
+found with _pwn.py 
+	hiddenfromview! - invalid
+	HIDDENFROMVIEW! - valid
+
+GOT SHELL
+
+can't find password file in level9 folder
+tried password, passwd, .password, .passwd.... 
+
+
+shell with euid=level9 in /tmp/hhh

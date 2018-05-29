@@ -1,0 +1,13 @@
+argv[1] must be 20 bytes length
+should write 5 ints in char repr which sum = 0x21DD09EC
+
+0x21DD09EC = 0x1DD905E8 + 0x01010101 + 0x01010101 + 0x01010101 + 0x01010101 
+
+payload = p32(0x1DD905E8) + p32(0x01010101)*4
+
+SOLUTION: 
+./col $'\xe8\x05\xd9\x1d\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01'
+
+FLAG:
+daddy! I just managed to create a hash collision :)
+

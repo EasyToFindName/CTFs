@@ -1,0 +1,18 @@
+0x0000000000400fcd - preparation for virtual call
+	[[rbp-0x38]] - addr of first object
+
+0x400fdb - virtual func addr has been set	
+
+0x0000000000400fe2 - virtual method call (call 0x4012d2)
+
+break *0x400fdb
+set disassembly-flavor intel 
+r 10 $(perl -e 'print "A"x10')
+
+display/i $pc
+
+x/wx $rax
+
+x/20wx 0x01ad4c50
+
+....

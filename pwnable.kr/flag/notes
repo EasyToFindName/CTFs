@@ -1,0 +1,9 @@
+Find entry point addr: objdump -f flag | grep -i "start"
+
+SOLUTION:
+upx -d flag
+strings flag | grep -10 "malloc()"
+
+FLAG:
+UPX...? sounds like a delivery service :)
+

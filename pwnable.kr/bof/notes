@@ -1,0 +1,15 @@
+break func
+x/wx $ebp+0x8
+break *0x56555654
+
+controlling 52 byte
+
+SOLUTION:
+	use pwn.py
+	cat flag
+
+FLAG:
+daddy, I just pwned a buFFer :)
+
+
+

